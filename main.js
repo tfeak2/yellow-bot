@@ -40,7 +40,6 @@ client.on("message", message => {
 
       case "ping": client.commands.get("ping").execute(message, args); break;
       case "reddit": case "r": client.commands.get("reddit").execute(message, args, rclient, Discord); break;
-      case "spam": client.commands.get("spam").execute(message, args); break;
       case "purge": client.commands.get("purge").execute(message, args); break;
       case "pythag": client.commands.get("pythag").execute(message, args); break;
       case "help": client.commands.get("help").execute(message, args, client, Discord); break;
