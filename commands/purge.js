@@ -1,7 +1,8 @@
 module.exports = {
-   name: "purge",
-   description: "deletes specified amount of messages (admin only)",
-   execute(message, args){
-      if(args[1] != null && message.guild.members.cache.get(message.author.id).hasPermission("ADMINISTRATOR")){message.channel.bulkDelete(args[1]);}
-   }
+    name: "purge",
+    description: "deletes specified amount of messages (admin)",
+    execute(message, args) {
+        if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Admin only!");
+        if (args[1] != null) return message.channel.bulkDelete(args[1]);
+    }
 }
