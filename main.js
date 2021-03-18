@@ -9,10 +9,10 @@ const script = require("./other/script.js");
 const snoowrap = require("snoowrap");
 const rclient = new snoowrap({
   userAgent: 'main.js',
-  clientId: secret.r_id,
-  clientSecret: secret.r_secret,
-  username: secret.r_username,
-  password: secret.r_password
+  clientId: process.env.r_id,
+  clientSecret: process.env.secret.r_secret,
+  username: process.env.r_username,
+  password: process.env.r_password
 });
 
 //command file manager
@@ -57,4 +57,4 @@ client.on("message", message => {
    }
 });
 //login bot
-client.login(secret.token);
+client.login(process.env.token);
