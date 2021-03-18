@@ -10,7 +10,7 @@ const snoowrap = require("snoowrap");
 const rclient = new snoowrap({
   userAgent: 'main.js',
   clientId: process.env.r_id,
-  clientSecret: process.env.secret.r_secret,
+  clientSecret: process.env.r_secret,
   username: process.env.r_username,
   password: process.env.r_password
 });
