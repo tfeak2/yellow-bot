@@ -32,7 +32,7 @@ client.once("ready", () => {
 
 //run when message in allowed channel
 client.on("message", message => {
-   //if(message.content.includes("<") && message.content.includes(">") && !message.author.bot){script.execute(message)}
+   if(message.content.includes("{") && message.content.includes("}") && !message.author.bot){script.execute(message)}
    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
    const args = message.content.slice(prefix.length).split(" ");
@@ -49,7 +49,8 @@ client.on("message", message => {
       case "kick": client.commands.get("kick").execute(message, args); break;
       case "help": client.commands.get("help").execute(message, args, client, Discord); break;
       case "links": client.commands.get("links").execute(message, args, Discord); break;
-      case "weather": client.commands.get("weather").execute(message, args); break;
+      case "dates": client.commands.get("dates").execute(message, args, Discord); break;
+      case "weather": client.commands.get("weather").execute(message, args, Discord); break;
 
       default: message.channel.send("Unknown Command"); break;
 
