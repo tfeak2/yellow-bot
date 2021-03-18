@@ -2,7 +2,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({disableEveryone: false});
 const prefix = ">";
-const secret = require("./secret.json");
+//const secret = require("./secret.json");
 const script = require("./other/script.js");
 
 //redit api
