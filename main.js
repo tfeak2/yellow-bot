@@ -55,6 +55,7 @@ client.on("message", message => {
       //case "dates": client.commands.get("dates").execute(message, args, Discord); break;
       case "weather": client.commands.get("weather").execute(message, args, Discord); break;
       case "skyblock": client.commands.get("skyblock").execute(message, args, Discord, hypixel); break;
+      case "bazaar": client.commands.get("bazaar").execute(message, args, Discord, hypixel); break;
 
    }
 });
