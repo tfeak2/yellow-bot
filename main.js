@@ -15,8 +15,8 @@ const rclient = new snoowrap({
   password: process.env.r_password
 });
 
-const Hypixel = require('hypixel-api-reborn');
-const hypixel = new Hypixel.Client(process.env.hypixel_api);
+//const Hypixel = require('hypixel-api-reborn');
+//const hypixel = new Hypixel.Client(process.env.hypixel_api);
 
 //command file manager
 const fs = require("fs");
@@ -54,8 +54,8 @@ client.on("message", message => {
       //case "links": client.commands.get("links").execute(message, args, Discord); break;
       //case "dates": client.commands.get("dates").execute(message, args, Discord); break;
       case "weather": client.commands.get("weather").execute(message, args, Discord); break;
-      case "skyblock": client.commands.get("skyblock").execute(message, args, Discord, hypixel); break;
-      case "bazaar": client.commands.get("bazaar").execute(message, args, Discord, hypixel); break;
+      //case "skyblock": client.commands.get("skyblock").execute(message, args, Discord, hypixel); break;
+      //case "bazaar": client.commands.get("bazaar").execute(message, args, Discord, hypixel); break;
       case "badapple": client.commands.get("badapple").execute(message, args, Discord); break;
       default: message.channel.send("Unknown Command");
 
