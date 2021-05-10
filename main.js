@@ -56,6 +56,8 @@ client.on("message", message => {
       case "weather": client.commands.get("weather").execute(message, args, Discord); break;
       case "skyblock": client.commands.get("skyblock").execute(message, args, Discord, hypixel); break;
       case "bazaar": client.commands.get("bazaar").execute(message, args, Discord, hypixel); break;
+      case "badapple": client.commands.get("badapple").execute(message, args, Discord); break;
+      default: message.channel.send("Unknown Command");
 
    }
 });
