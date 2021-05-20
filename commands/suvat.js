@@ -7,7 +7,7 @@ module.exports = {
         acceptedCharacters.forEach(element => {
             if(message.content.indexOf(element) != -1){
                 var slicedString = message.content.substring(message.content.indexOf(element) - 1)
-                slicedString = slicedString.substring(0, finalString.indexOf(","));
+                slicedString = slicedString.substring(0, slicedString.indexOf(","));
                 message.channel.send(slicedString);
             }
         });
