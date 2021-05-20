@@ -12,9 +12,9 @@ module.exports = {
             }
         });
         var embed = new Discord.MessageEmbed();
-        table.forEach(element => {
+        for(var element in table){
             embed.addFields({name: element, value: table[element].value, inline: false});
-        });
+        }
         message.channel.send(embed);
     }
 }
