@@ -8,13 +8,12 @@ module.exports = {
             if(message.content.indexOf(element + "=") != -1){
                 var slicedString = message.content.substring(message.content.indexOf(element + "=") - 1)
                 slicedString = slicedString.substring(0, slicedString.indexOf(","));
-                message.channel.send(slicedString.substring(2));
-                table[element] = slicedString.substring(2);
+                table[element] = slicedString.substring(3);
             }
         });
         var embed = new Discord.MessageEmbed();
         for(var element in table){
-            embed.addFields({name: element, value: table[element].value, inline: false});
+            embed.addFields({name: element, value: table[element], inline: false});
         }
         message.channel.send(embed);
     }
