@@ -51,6 +51,7 @@ client.on("message", message => {
       case "ban": client.commands.get("ban").execute(message, args); break;
       case "kick": client.commands.get("kick").execute(message, args); break;
       case "help": client.commands.get("help").execute(message, args, client, Discord); break;
+      case "suvat": client.commands.get("suvat").execute(message, args, client, Discord); break;
       //case "links": client.commands.get("links").execute(message, args, Discord); break;
       //case "dates": client.commands.get("dates").execute(message, args, Discord); break;
       case "weather": client.commands.get("weather").execute(message, args, Discord); break;
