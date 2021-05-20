@@ -8,8 +8,8 @@ module.exports = {
             if(message.content.indexOf(element + "=") != -1){
                 var slicedString = message.content.substring(message.content.indexOf(element) - 1)
                 slicedString = slicedString.substring(0, slicedString.indexOf(","));
-                message.channel.send(slicedString.substring(slicedString.indexOf("=")));
-                table[element] = slicedString.substring(slicedString.indexOf("="));
+                message.channel.send(slicedString.substring(3, -1));
+                table[element] = slicedString.substring(3, -1);
             }
         });
         var embed = new Discord.MessageEmbed();
