@@ -11,7 +11,7 @@ module.exports = {
                 table[element] = slicedString.substring(slicedString.indexOf("="));
             }
         });
-        var embed = Discord.MessageEmbed();
+        var embed = new Discord.MessageEmbed();
         table.forEach(element => {
             embed.addFields({name: element, value: table[element].value, inline: false});
         });
