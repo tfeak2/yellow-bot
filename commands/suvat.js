@@ -15,6 +15,7 @@ module.exports = {
         for(var element in table){
             embed.addFields({name: element, value: table[element], inline: false});
         }
+        if(table["s"])
         message.channel.send(embed);
     }
 }
