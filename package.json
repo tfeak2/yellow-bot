@@ -9,6 +9,7 @@
   "author": "tfeak2",
   "license": "ISC",
   "dependencies": {
+    "discord-buttons": "^2.4.1",
     "discord.js": "^12.5.1",
     "hypixel-api-reborn": "^7.0.3",
     "mongoose": "^5.12.3",

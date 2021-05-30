@@ -1,6 +1,7 @@
 //import discord lib set constants
 const Discord = require("discord.js");
 const client = new Discord.Client({disableEveryone: false});
+const disbut = require('discord-buttons')(client);
 const prefix = ">";
 //const secret = require("./secret.json");
 const script = require("./other/script.js");
@@ -55,6 +56,7 @@ client.on("message", message => {
       //case "links": client.commands.get("links").execute(message, args, Discord); break;
       //case "dates": client.commands.get("dates").execute(message, args, Discord); break;
       case "weather": client.commands.get("weather").execute(message, args, Discord); break;
+      case "button": client.commands.get("button").execute(message, args, disbut); break;
       //case "skyblock": client.commands.get("skyblock").execute(message, args, Discord, hypixel); break;
       //case "bazaar": client.commands.get("bazaar").execute(message, args, Discord, hypixel); break;
       //case "badapple": client.commands.get("badapple").execute(message, args, Discord); break;
@@ -62,5 +64,11 @@ client.on("message", message => {
 
    }
 });
+client.on('clickButton', async (button) => {
+   if (button.id === 'number') {
+     button.setLabel(button.clicker.username);
+   }
+ });
+
 //login bot
 client.login(process.env.token);
