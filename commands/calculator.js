@@ -52,8 +52,6 @@ module.exports = {
         .setLabel("0")
         .setID("0");
 
-        message.channel.send("0", {
-            buttons: [[one, two, three], [four, five, six], [seven, eight, nine], [zero]]
-        });
+        message.channel.send("0", one, two, three);
     }
 }
