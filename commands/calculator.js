@@ -87,7 +87,7 @@ module.exports = {
             .addComponent(four)
             .addComponent(five)
             .addComponent(six)
-            .addComponent(mius)
+            .addComponent(minus)
         let buttonRow3 = new MessageActionRow()
             .addComponent(seven)
             .addComponent(eight)
