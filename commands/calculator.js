@@ -96,7 +96,7 @@ module.exports = {
         let buttonRow4 = new MessageActionRow()
             .addComponent(zero)
             .addComponent(clear)
-            .addComponent(nine)
+            .addComponent(equals)
             .addComponent(divide)
 
         message.channel.send("0", {
