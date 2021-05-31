@@ -65,7 +65,7 @@ client.on("message", message => {
    }
 });
 client.on('clickButton', async (button) => {
-   button.message.edit(button.message.content + button.id);
+   await button.message.edit(button.message.content + button.id);
  });
 
 //login bot
