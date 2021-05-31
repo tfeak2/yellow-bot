@@ -98,8 +98,8 @@ module.exports = {
             .addComponent(nine)
             .addComponent(divide)
 
-        message.channel.send("0", components: {
-            [buttonRow, buttonRow2, buttonRow3, buttonRow4]
+        message.channel.send("0", {
+            components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
         });
     }
 }
