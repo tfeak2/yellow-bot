@@ -52,10 +52,21 @@ module.exports = {
         .setLabel("0")
         .setID("0");
 
+        plus = new disbut.MessageButton()
+        .setStyle("green")
+        .setLabel("+")
+        .setID("+");
+        minus = new disbut.MessageButton()
+        .setStyle("red")
+        .setLabel("-")
+        .setID("-");
+        equals = new disbut.MessageButton()
+        .setStyle("blurple")
+        .setLabel("=")
+        .setID("=");
+
         message.channel.send("0", {
-            buttons: [one, two, three]
-        }, {
-            buttons: [one, two, three]
+            buttons: [one, two, three, plus, equals]
         });
     }
 }
