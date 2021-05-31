@@ -53,7 +53,7 @@ module.exports = {
         .setID("0");
 
         message.channel.send("0", {
-            buttons: [one, two, three]
+            buttons: [[one, two, three], [four, five, six], [seven, eight, nine], [zero]]
         });
     }
 }
