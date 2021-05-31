@@ -70,7 +70,7 @@ module.exports = {
         .setID("X");
 
         message.channel.send("0", {
-            buttons: [one, two, three, plus, equals, clear]
+            buttons: [one, two, plus, equals, clear]
         });
     }
 }
