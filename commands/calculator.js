@@ -2,7 +2,7 @@ module.exports = {
     name: "calculator",
     description: "calculator in discord",
     execute(message, args){
-        const { MessageButton } = require("discord-buttons")
+        const { MessageButton, MessageActionRow } = require("discord-buttons")
         one = new MessageButton()
         .setStyle("gray")
         .setLabel("1")
