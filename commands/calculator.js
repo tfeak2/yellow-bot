@@ -60,17 +60,46 @@ module.exports = {
         .setStyle("red")
         .setLabel("-")
         .setID("-");
+        times = new disbut.MessageButton()
+        .setStyle("green")
+        .setLabel("*")
+        .setID("*");
+        divide = new disbut.MessageButton()
+        .setStyle("red")
+        .setLabel("/")
+        .setID("/");
         equals = new disbut.MessageButton()
         .setStyle("blurple")
         .setLabel("=")
         .setID("=");
         clear = new disbut.MessageButton()
         .setStyle("red")
-        .setLabel("X")
+        .setLabel("x")
         .setID("X");
 
-        message.channel.send("0", {
-            buttons: [one, two, plus, equals, clear]
+        let buttonRow = new MessageActionRow()
+            .addComponent(one)
+            .addComponent(two)
+            .addComponent(three)
+            .addComponent(plus)
+        let buttonRow2 = new MessageActionRow()
+            .addComponent(four)
+            .addComponent(five)
+            .addComponent(six)
+            .addComponent(mius)
+        let buttonRow3 = new MessageActionRow()
+            .addComponent(seven)
+            .addComponent(eight)
+            .addComponent(nine)
+            .addComponent(times)
+        let buttonRow4 = new MessageActionRow()
+            .addComponent(zero)
+            .addComponent(clear)
+            .addComponent(nine)
+            .addComponent(divide)
+
+        message.channel.send("0", components: {
+            [buttonRow, buttonRow2, buttonRow3, buttonRow4]
         });
     }
 }
