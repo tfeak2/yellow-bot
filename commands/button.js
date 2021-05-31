@@ -6,8 +6,8 @@ module.exports = {
         for(var i = 0; i<9; i++){
             numbers[i] = new disbut.MessageButton()
             .setStyle("gray")
-            .setLabel(i)
-            .setID(i);
+            .setLabel(i.toString())
+            .setID(i.toString());
         }
 
         message.channel.send("0", {
