@@ -2,23 +2,16 @@ module.exports = {
     name: "button",
     description: "try out new discord buttons",
     execute(message, args, disbut){
-        let yes = new disbut.MessageButton()
-        .setStyle('green')
-        .setLabel('+')
-        .setID('yes');
-
-        let no = new disbut.MessageButton()
-        .setStyle('red')
-        .setLabel('-')
-        .setID('no');
-
-        let hyperlink = new disbut.MessageButton()
-        .setStyle('url')
-        .setLabel("Link")
-        .setURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        var numbers;
+        for(var i = 0; i<9; i++){
+            numbers[i] = new disbut.MessageButton()
+            .setStyle("grey")
+            .setLable(i)
+            .setID(i);
+        }
 
         message.channel.send("0", {
-            buttons: [yes, no]
+            buttons: numbers//[numbers]
         });
     }
 }

@@ -65,12 +65,7 @@ client.on("message", message => {
    }
 });
 client.on('clickButton', async (button) => {
-   if (button.id === 'yes') {
-      button.message.edit(parseInt(button.message.content, 10) + 1);
-   }
-   if (button.id === 'no') {
-      button.message.edit(parseInt(button.message.content, 10) - 1);
-   }
+   button.message.edit(button.message.content + button.id);
  });
 
 //login bot
