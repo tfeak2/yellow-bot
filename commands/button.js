@@ -8,6 +8,6 @@ module.exports = {
         .setID('number') //note: if you use the style "url" you must provide url using .setURL('https://example.com')
         .setDisabled(); //disables the button | default: false
 
-        message.channel.send(button);
+        message.channel.send("Press the button" ,button);
     }
 }
