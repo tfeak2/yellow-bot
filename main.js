@@ -69,6 +69,9 @@ client.on('clickButton', async (button) => {
    if(button.id == "="){
       return button.message.edit(eval(button.message.content));
    }
+   if(button.id == "X"){
+      return button.message.edit("0");
+   }
    await button.message.edit(button.message.content + button.id);
  });
 

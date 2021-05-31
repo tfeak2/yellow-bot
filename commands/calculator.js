@@ -64,9 +64,13 @@ module.exports = {
         .setStyle("blurple")
         .setLabel("=")
         .setID("=");
+        clear = new disbut.MessageButton()
+        .setStyle("red")
+        .setLabel("X")
+        .setID("X");
 
         message.channel.send("0", {
-            buttons: [one, two, three, plus, equals]
+            buttons: [one, two, three, plus, equals, clear]
         });
     }
 }
