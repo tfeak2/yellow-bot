@@ -54,12 +54,8 @@ module.exports = {
 
         message.channel.send("0", {
             buttons: [one, two, three]
-        });
-        message.channel.send("placeholder", {
-            buttons: [four, five, six]
-        });
-        message.channel.send("placeholder", {
-            buttons: [seven, eight, nine]
+        }, {
+            buttons: [one, two, three]
         });
     }
 }
