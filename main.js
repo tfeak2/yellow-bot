@@ -65,6 +65,7 @@ client.on("message", message => {
    }
 });
 client.on('clickButton', async (button) => {
+   button.defer();
    await button.message.edit(button.message.content + button.id);
  });
 
