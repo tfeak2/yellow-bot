@@ -65,8 +65,11 @@ client.on("message", message => {
    }
 });
 client.on('clickButton', async (button) => {
-   if (button.id === 'number') {
-     button.setLabel(button.clicker.username);
+   if (button.id === 'yes') {
+     await button.reply.send("Correct Answer!!");
+   }
+   if (button.id === 'no') {
+      await button.reply.send("Your Wrong!!");
    }
  });
 

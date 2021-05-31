@@ -2,11 +2,23 @@ module.exports = {
     name: "button",
     description: "try out new discord buttons",
     execute(message, args, disbut){
-        let button = new disbut.MessageButton()
-        .setStyle('red') //default: blurple
-        .setLabel('0') //default: NO_LABEL_PROVIDED
-        .setID('number'); //note: if you use the style "url" you must provide url using .setURL('https://example.com')
+        let yes = new disbut.MessageButton()
+        .setStyle('green')
+        .setLabel('Yes')
+        .setID('yes');
 
-        message.channel.send("Press the button", button);
+        let no = new disbut.MessageButton()
+        .setStyle('red')
+        .setLabel('No')
+        .setID('no');
+
+        let hyperlink = new disbut.MessageButton()
+        .setStyle('url')
+        .setLabel("Link")
+        .setURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+
+        message.channel.send("Does Pineapple Belong On Pizza?", {
+            buttons: [yes, no, hyperlink]
+        });
     }
 }
