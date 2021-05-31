@@ -6,7 +6,7 @@ module.exports = {
         for(var i = 0; i<9; i++){
             numbers[i] = new disbut.MessageButton()
             .setStyle("grey")
-            .setLable(i)
+            .setLabel(i)
             .setID(i);
         }
 
