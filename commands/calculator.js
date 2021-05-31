@@ -52,6 +52,14 @@ module.exports = {
         .setLabel("0")
         .setID("0");
 
-        message.channel.send("0", one, two, three);
+        message.channel.send("0", {
+            buttons: [one, two, three]
+        });
+        message.channel.send("placeholder", {
+            buttons: [four, five, six]
+        });
+        message.channel.send("placeholder", {
+            buttons: [seven, eight, nine]
+        });
     }
 }
