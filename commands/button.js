@@ -4,12 +4,12 @@ module.exports = {
     execute(message, args, disbut){
         let yes = new disbut.MessageButton()
         .setStyle('green')
-        .setLabel('Yes')
+        .setLabel('+')
         .setID('yes');
 
         let no = new disbut.MessageButton()
         .setStyle('red')
-        .setLabel('No')
+        .setLabel('-')
         .setID('no');
 
         let hyperlink = new disbut.MessageButton()
@@ -17,8 +17,8 @@ module.exports = {
         .setLabel("Link")
         .setURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 
-        message.channel.send("Does Pineapple Belong On Pizza?", {
-            buttons: [yes, no, hyperlink]
+        message.channel.send("0", {
+            buttons: [yes, no]
         });
     }
 }

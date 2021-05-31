@@ -66,10 +66,10 @@ client.on("message", message => {
 });
 client.on('clickButton', async (button) => {
    if (button.id === 'yes') {
-     await button.reply.send("Correct Answer!!");
+      button.message.edit(button.message.content + 1);
    }
    if (button.id === 'no') {
-      await button.reply.send("Your Wrong!!");
+      button.message.edit(button.message.content - 1);
    }
  });
 
