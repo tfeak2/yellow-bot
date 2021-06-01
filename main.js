@@ -69,6 +69,14 @@ client.on("message", message => {
    catch{
 
    }
+
+   profileModel.findOneAndUpdate({
+      userID: message.author.id,
+   }, {
+      $inc: {
+         msgCount: 1,
+      }
+   });
    
    if(message.content.includes("{") && message.content.includes("}") && !message.author.bot){script.execute(message)}
    if(!message.content.startsWith(prefix) || message.author.bot) return;
@@ -90,6 +98,7 @@ client.on("message", message => {
       //case "links": client.commands.get("links").execute(message, args, Discord); break;
       //case "dates": client.commands.get("dates").execute(message, args, Discord); break;
       case "weather": client.commands.get("weather").execute(message, args, Discord); break;
+      case "tokens": client.commands.get("tokens").execute(message, args, Discord, profileData); break;
       case "calculator": client.commands.get("calculator").execute(message, args, disbut); break;
       //case "skyblock": client.commands.get("skyblock").execute(message, args, Discord, hypixel); break;
       //case "bazaar": client.commands.get("bazaar").execute(message, args, Discord, hypixel); break;
