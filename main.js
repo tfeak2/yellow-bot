@@ -55,9 +55,9 @@ client.once("ready", () => {
 client.on("message", message => {
    let profileData;
    try{
-      profileData = await profileModel.findOne({userID: message.author.id});
+      profileData = profileModel.findOne({userID: message.author.id});
       if(!profileData){
-         let profile = await profileModel.create({
+         let profile = profileModel.create({
             userID: message.author.id,
             serverID: message.guild.id,
             tokens: 1,
