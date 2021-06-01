@@ -137,7 +137,7 @@ one = new MessageButton()
         .setLabel("=")
         .setID("=");
         clear = new MessageButton()
-        .setStyle("blurple")
+        .setStyle("red")
         .setLabel("x")
         .setID("x");
 
@@ -165,18 +165,18 @@ one = new MessageButton()
 
 client.on('clickButton', async (button) => {
    button.defer();
-   var editedMessage = (editedMessage).replace("`", "");
+   var editedMessage = (button.message.content).replace("```", "");
    if(button.id == "="){
-      return button.message.edit("```" + eval(editedMessage) + "```", {
+      return button.message.edit("```" + eval(button.message.content) + "```", {
          components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
       });
    }
-   if(button.id == "X"){
+   if(button.id == "x"){
       return button.message.edit("```0```", {
          components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
       });
    }
-   await button.message.edit("```"+editedMessage + button.id+"```",{
+   await button.message.edit(button.message.content + button.id,{
       components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
    });
  });

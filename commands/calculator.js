@@ -74,7 +74,7 @@ module.exports = {
         .setLabel("=")
         .setID("=");
         clear = new MessageButton()
-        .setStyle("blurple")
+        .setStyle("red")
         .setLabel("x")
         .setID("x");
 
