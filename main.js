@@ -166,13 +166,14 @@ one = new MessageButton()
 client.on('clickButton', async (button) => {
    button.defer();
    var editedMessage = (button.message.content).replace(/```/g, "");
+   editedMessage = editedMessage.replace(/ /g, "");
    if(button.id == "="){
       return button.message.edit("```" + eval(editedMessage) + "```", {
          components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
       });
    }
    if(button.id == "x"){
-      return button.message.edit("``````", {
+      return button.message.edit("``` ```", {
          components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
       });
    }

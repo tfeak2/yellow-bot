@@ -99,7 +99,7 @@ module.exports = {
             .addComponent(divide)
             .addComponent(equals)
 
-        message.channel.send("``````", {
+        message.channel.send("``` ```", {
             components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
         });
     }
