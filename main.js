@@ -117,19 +117,19 @@ one = new MessageButton()
         .setID("0");
 
         plus = new MessageButton()
-        .setStyle("green")
+        .setStyle("blurple")
         .setLabel("+")
         .setID("+");
         minus = new MessageButton()
-        .setStyle("red")
+        .setStyle("blurple")
         .setLabel("-")
         .setID("-");
         times = new MessageButton()
-        .setStyle("green")
+        .setStyle("blurple")
         .setLabel("*")
         .setID("*");
         divide = new MessageButton()
-        .setStyle("red")
+        .setStyle("blurple")
         .setLabel("/")
         .setID("/");
         equals = new MessageButton()
@@ -137,9 +137,9 @@ one = new MessageButton()
         .setLabel("=")
         .setID("=");
         clear = new MessageButton()
-        .setStyle("red")
+        .setStyle("blurple")
         .setLabel("x")
-        .setID("X");
+        .setID("x");
 
         let buttonRow = new MessageActionRow()
             .addComponent(one)
@@ -159,18 +159,24 @@ one = new MessageButton()
         let buttonRow4 = new MessageActionRow()
             .addComponent(zero)
             .addComponent(clear)
-            .addComponent(equals)
             .addComponent(divide)
+            .addComponent(equals)
+            
 
 client.on('clickButton', async (button) => {
    button.defer();
+   var editedMessage = (editedMessage).replace("`", "");
    if(button.id == "="){
-      return button.message.edit(eval(button.message.content));
+      return button.message.edit("```" + eval(editedMessage) + "```", {
+         components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
+      });
    }
    if(button.id == "X"){
-      return button.message.edit("0");
+      return button.message.edit("```0```", {
+         components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
+      });
    }
-   await button.message.edit(button.message.content + button.id,{
+   await button.message.edit("```"+editedMessage + button.id+"```",{
       components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
    });
  });

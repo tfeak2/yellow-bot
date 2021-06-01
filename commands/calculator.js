@@ -54,19 +54,19 @@ module.exports = {
         .setID("0");
 
         plus = new MessageButton()
-        .setStyle("green")
+        .setStyle("blurple")
         .setLabel("+")
         .setID("+");
         minus = new MessageButton()
-        .setStyle("red")
+        .setStyle("blurple")
         .setLabel("-")
         .setID("-");
         times = new MessageButton()
-        .setStyle("green")
+        .setStyle("blurple")
         .setLabel("*")
         .setID("*");
         divide = new MessageButton()
-        .setStyle("red")
+        .setStyle("blurple")
         .setLabel("/")
         .setID("/");
         equals = new MessageButton()
@@ -74,9 +74,9 @@ module.exports = {
         .setLabel("=")
         .setID("=");
         clear = new MessageButton()
-        .setStyle("red")
+        .setStyle("blurple")
         .setLabel("x")
-        .setID("X");
+        .setID("x");
 
         let buttonRow = new MessageActionRow()
             .addComponent(one)
@@ -96,10 +96,10 @@ module.exports = {
         let buttonRow4 = new MessageActionRow()
             .addComponent(zero)
             .addComponent(clear)
-            .addComponent(equals)
             .addComponent(divide)
+            .addComponent(equals)
 
-        message.channel.send("0", {
+        message.channel.send("```0```", {
             components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
         });
     }
