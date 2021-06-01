@@ -167,7 +167,7 @@ client.on('clickButton', async (button) => {
    button.defer();
    var editedMessage = (button.message.content).replace("```", "");
    if(button.id == "="){
-      return button.message.edit("```" + eval(button.message.content) + "```", {
+      return button.message.edit("```" + eval(editedMessage) + "```", {
          components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
       });
    }
@@ -176,7 +176,7 @@ client.on('clickButton', async (button) => {
          components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
       });
    }
-   await button.message.edit(button.message.content + button.id,{
+   await button.message.edit("```" + editedMessage + button.id + "```",{
       components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
    });
  });
