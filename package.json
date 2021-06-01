@@ -12,7 +12,7 @@
     "discord-buttons": "^3.0.1",
     "discord.js": "^12.5.1",
     "hypixel-api-reborn": "^7.0.3",
-    "mongoose": "^5.12.3",
+    "mongoose": "^5.12.12",
     "snoowrap": "^1.22.0",
     "weather-js": "^2.0.0"
   }

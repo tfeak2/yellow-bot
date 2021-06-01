@@ -6,6 +6,7 @@ const { MessageButton, MessageActionRow } = require("discord-buttons")
 const prefix = ">";
 //const secret = require("./secret.json");
 const script = require("./other/script.js");
+const mongoose = require("mongoose");
 
 //redit api
 const snoowrap = require("snoowrap");
@@ -28,6 +29,20 @@ for(const file of commandFiles){
    const command = require(`./commands/${file}`);
    client.commands.set(command.name, command);
 }
+
+mongoose
+   .connect(proccess.env.MONGODB_SRV, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+   })
+   .then(() =>{
+      console.log("Connected to the Database!");
+   })
+   .catch((err) => {
+      console.log(err);
+   });
+
 
 //run when bot online
 client.once("ready", () => {
@@ -66,7 +81,7 @@ client.on("message", message => {
    }
 });
 
-one = new MessageButton()
+        one = new MessageButton()
         .setStyle("gray")
         .setLabel("1")
         .setID("1");
