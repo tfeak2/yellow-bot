@@ -32,7 +32,7 @@ for(const file of commandFiles){
 }
 
 mongoose
-   .connect(proccess.env.MONGODB_SRV, {
+   .connect(process.env.MONGODB_SRV, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
