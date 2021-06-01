@@ -7,6 +7,7 @@ const prefix = ">";
 //const secret = require("./secret.json");
 const script = require("./other/script.js");
 const mongoose = require("mongoose");
+const profileModel = require("../profileSchema");
 
 //redit api
 const snoowrap = require("snoowrap");
@@ -52,6 +53,23 @@ client.once("ready", () => {
 
 //run when message in allowed channel
 client.on("message", message => {
+   let profileData;
+   try{
+      profileData = await profileModel.findOne({userID: message.author.id});
+      if(!profileData){
+         let profile = await profileModel.create({
+            userID: message.author.id,
+            serverID: message.guild.id,
+            tokens: 1,
+            msgCount: 1,
+        });
+        profile.save();
+      }
+   }
+   catch{
+
+   }
+   
    if(message.content.includes("{") && message.content.includes("}") && !message.author.bot){script.execute(message)}
    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
