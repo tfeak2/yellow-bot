@@ -172,7 +172,7 @@ client.on('clickButton', async (button) => {
       });
    }
    if(button.id == "x"){
-      return button.message.edit("```0```", {
+      return button.message.edit("``````", {
          components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
       });
    }
