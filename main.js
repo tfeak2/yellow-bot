@@ -7,7 +7,7 @@ const prefix = ">";
 //const secret = require("./secret.json");
 const script = require("./other/script.js");
 const mongoose = require("mongoose");
-const profileModel = require("../profileSchema");
+const profileModel = require("./profileSchema.js");
 
 //redit api
 const snoowrap = require("snoowrap");
