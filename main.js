@@ -52,12 +52,12 @@ client.once("ready", () => {
 });
 
 //run when message in allowed channel
-client.on("message", message => {
+client.on("message", async message => {
    let profileData;
    try{
-      profileData = profileModel.findOne({userID: message.author.id});
+      profileData = await profileModel.findOne({userID: message.author.id});
       if(!profileData){
-         let profile = profileModel.create({
+         let profile = await profileModel.create({
             userID: message.author.id,
             serverID: message.guild.id,
             tokens: 1,
