@@ -58,7 +58,7 @@ client.on("message", message => {
    if(!message.content.startsWith(prefix) || message.author.bot) return;
    message.channel.send("test");
 
-   /*const args = message.content.slice(prefix.length).split(" ");
+   const args = message.content.slice(prefix.length).split(" ");
 
    //test for different command strings
    switch (args[0]){
@@ -72,7 +72,7 @@ client.on("message", message => {
       case "kick": client.commands.get("kick").execute(message, args); break;
       case "help": client.commands.get("help").execute(message, args, client, Discord); break;
       case "quadratic": client.commands.get("quadratic").execute(message, args); break;
-      case "wpm": client.commands.get("wpm").execute(message, args); break;
+      //case "wpm": client.commands.get("wpm").execute(message, args); break;
       //case "links": client.commands.get("links").execute(message, args, Discord); break;
       //case "dates": client.commands.get("dates").execute(message, args, Discord); break;
       case "weather": client.commands.get("weather").execute(message, args, Discord); break;
@@ -83,7 +83,7 @@ client.on("message", message => {
       //case "badapple": client.commands.get("badapple").execute(message, args, Discord); break;
       default: message.channel.send("Unknown Command");
 
-   }*/
+   }
 });
 
         one = new MessageButton()
