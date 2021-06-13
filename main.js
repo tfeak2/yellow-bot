@@ -53,39 +53,12 @@ client.once("ready", () => {
 
 //run when message in allowed channel
 client.on("message", message => {
-   
-   /*async function asyncFunction(){
-      let profileData;
-      try{
-         profileData = await profileModel.findOne({userID: message.author.id});
-         if(!profileData){
-            let profile = await profileModel.create({
-               userID: message.author.id,
-               serverID: message.guild.id,
-               tokens: 1,
-               msgCount: 1,
-           });
-           profile.save();
-         }
-      }
-      catch{
 
-      }
-
-      await profileModel.findOneAndUpdate({
-         userID: message.author.id,
-      }, {
-         $inc: {
-            msgCount: 1,
-         }
-      });
-   }
-   asyncFunction();*/
-   
    
    if(!message.content.startsWith(prefix) || message.author.bot) return;
+   message.channel.send("test");
 
-   const args = message.content.slice(prefix.length).split(" ");
+   /*const args = message.content.slice(prefix.length).split(" ");
 
    //test for different command strings
    switch (args[0]){
@@ -110,7 +83,7 @@ client.on("message", message => {
       //case "badapple": client.commands.get("badapple").execute(message, args, Discord); break;
       default: message.channel.send("Unknown Command");
 
-   }
+   }*/
 });
 
         one = new MessageButton()
