@@ -6,12 +6,13 @@ module.exports = {
         if (args[2] != null) str+=args[2];
         regexStr= str.match(/[a-zA-Z]+|[0-9]+(?:\.[0-9]+|)/g);
         let minutes = regexStr[0];
-        switch(regexStr[1]){
-            case "f": minutes /= 160; break;
-            case "m": minutes /= 130; break;
-            case "s": minutes /= 100; break;
-            default: minutes /= 130; break;
+        var type = "Medium";
+        switch(regexStr[1][0]){
+            case "f": minutes /= 160; type = "fast"; break;
+            case "m": minutes /= 130; type = "medium"; break;
+            case "s": minutes /= 100; type = "slow"; break;
+            default: minutes /= 130; type = "medium"; break;
         }
-        message.channel.send("Estimated Time: " + minutes + "min");
+        message.channel.send(`Estimated time for ${regexStr[0]} words is ${minutes} minutes long at a ${type} pace`);
     }
 }
