@@ -6,8 +6,8 @@ const { MessageButton, MessageActionRow } = require("discord-buttons")
 const prefix = ">";
 //const secret = require("./secret.json");
 const script = require("./other/script.js");
-const mongoose = require("mongoose");
-const profileModel = require("./profileSchema.js");
+//const mongoose = require("mongoose");
+//const profileModel = require("./profileSchema.js");
 
 //redit api
 const snoowrap = require("snoowrap");
@@ -31,7 +31,7 @@ for(const file of commandFiles){
    client.commands.set(command.name, command);
 }
 
-mongoose
+/*mongoose
    .connect(process.env.MONGODB_SRV, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -42,7 +42,7 @@ mongoose
    })
    .catch((err) => {
       console.log(err);
-   });
+   });*/
 
 
 //run when bot online
@@ -82,7 +82,7 @@ client.on("message", message => {
    }
    asyncFunction();*/
    
-   if(message.content.includes("{") && message.content.includes("}") && !message.author.bot){script.execute(message)}
+   
    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
    const args = message.content.slice(prefix.length).split(" ");
