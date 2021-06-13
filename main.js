@@ -31,7 +31,7 @@ for(const file of commandFiles){
    client.commands.set(command.name, command);
 }
 
-/*mongoose
+mongoose
    .connect(process.env.MONGODB_SRV, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -42,7 +42,7 @@ for(const file of commandFiles){
    })
    .catch((err) => {
       console.log(err);
-   });*/
+   });
 
 
 //run when bot online
