@@ -5,7 +5,6 @@ module.exports = {
         var str = args[1];
         if (args[2] != null) str+=args[2];
         regexStr= str.match(/[a-zA-Z]+|[0-9]+(?:\.[0-9]+|)/g);
-        if(isNaN(regexStr[0])) return message.channel.send("Invalid arguments");
         let minutes = regexStr[0];
         var type = "Medium";
         switch(regexStr[1][0]){
