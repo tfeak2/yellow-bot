@@ -13,6 +13,6 @@ module.exports = {
             case "s": minutes /= 100; type = "slow"; break;
             default: minutes /= 130; type = "medium"; break;
         }
-        message.channel.send(`Estimated time for **${regexStr[0]}** words is **${Math.round(minutes*10)/10}** minutes long at a **${type}** pace`);
+        message.channel.send(`Estimated time for **${regexStr[0]}** words is **${minutes}** minutes long at a **${type}** pace`);
     }
 }
