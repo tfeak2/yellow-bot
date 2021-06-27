@@ -6,9 +6,8 @@ module.exports = {
         var edditedMessage = message.content.replace(">g ", "");
         edditedMessage = edditedMessage.replace(">global ", "");
         var embed = new Discord.MessageEmbed();
-        embed.setDescription(edditedMessage);
         embed.setColor("#ffffff");
-        embed.setFooter(message.author.username, message.author.displayAvatarURL);
+        embed.setAddField(`**${message.author.username}: **`, edditedMessage);
         for(var i = 0; i<globalChannels.length; i++){
             if(client.channels.cache.has(globalChannels[i]))client.channels.cache.get(globalChannels[i]).send(embed);
         }
