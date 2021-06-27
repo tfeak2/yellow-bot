@@ -8,7 +8,7 @@ module.exports = {
         var embed = new Discord.MessageEmbed();
         embed.setDescription(edditedMessage);
         embed.setColor("#ffffff");
-        embed.setFooter(message.author.username, message.author.avatar);
+        embed.setFooter(message.author.username, message.author.displayAvatarURL);
         for(var i = 0; i<globalChannels.length; i++){
             if(client.channels.cache.has(globalChannels[i]))client.channels.cache.get(globalChannels[i]).send(embed);
         }
