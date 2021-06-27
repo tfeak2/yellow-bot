@@ -7,6 +7,7 @@ module.exports = {
         edditedMessage = edditedMessage.replace(">global ", "");
         var embed = new Discord.MessageEmbed();
         embed.setColor(message.member.displayHexColor);
+        embed.setAuthor(message.author.username, message.author.avatar, message.author.displayAvatarURL());
         embed.setFooter(message.guild.name, message.guild.bannerURL());
         embed.addField(`**${message.author.username}: **`, edditedMessage, false);
         for(var i = 0; i<globalChannels.length; i++){
