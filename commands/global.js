@@ -4,7 +4,6 @@ module.exports = {
     execute(message, client, Discord, globalChannels){
         var edditedMessage = message.content.replace(">g ", "");
         edditedMessage = edditedMessage.replace(">global ", "");
-        
         var embed = new Discord.MessageEmbed();
         embed.setDescription(edditedMessage);
         embed.setColor("#ffffff");
