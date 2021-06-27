@@ -64,6 +64,7 @@ client.on("message", message => {
 
       case "ping": client.commands.get("ping").execute(message, args); break;
       case "reddit": case "r": client.commands.get("reddit").execute(message, args, rclient, Discord); break;
+      case "anonymous": case "a": client.commands.get("anonymous").execute(message, args); break;
       case "purge": client.commands.get("purge").execute(message, args); break;
       case "pythag": client.commands.get("pythag").execute(message, args); break;
       case "icon": client.commands.get("icon").execute(message, args); break;
