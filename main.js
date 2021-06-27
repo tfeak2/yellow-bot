@@ -54,7 +54,6 @@ client.once("ready", () => {
 
 //run when message in allowed channel
 client.on("message", message => {
-
    for(var i = 0; i<globalChannels.length; i++){
       if(message.channel.id == globalChannels[i])client.commands.get("global").execute(message, client, Discord, globalChannels);
    }
