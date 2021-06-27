@@ -8,7 +8,7 @@ module.exports = {
         for(var element in anonymousChannels){
             if(client.channels.cache.has(element))client.channels.cache.get(element).send(edditedMessage);
         }
-        
+        message.channel.send(client.channels.cache.size);
         message.delete();
     }
 }
