@@ -4,6 +4,7 @@ const client = new Discord.Client({disableEveryone: false});
 const disbut = require('discord-buttons')(client);
 const { MessageButton, MessageActionRow } = require("discord-buttons")
 const prefix = ">";
+var globalChannels = ["858281539371401226", "858638382837661716"];
 //const secret = require("./secret.json");
 const script = require("./other/script.js");
 //const mongoose = require("mongoose");
@@ -54,7 +55,9 @@ client.once("ready", () => {
 //run when message in allowed channel
 client.on("message", message => {
 
-   
+   for(var i = 0; i<globalChannels.length; i++){
+      if(message.channel.id == globalChannels[i])client.commands.get("global").execute(message, client, Discord, globalChannels);
+   }
    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
    const args = message.content.slice(prefix.length).split(" ");
@@ -64,7 +67,7 @@ client.on("message", message => {
 
       case "ping": client.commands.get("ping").execute(message, args); break;
       case "reddit": case "r": client.commands.get("reddit").execute(message, args, rclient, Discord); break;
-      case "anonymous": case "a": client.commands.get("anonymous").execute(message, args, client); break;
+      case "global": case "g": client.commands.get("global").execute(message, client, Discord, globalChannels); break;
       case "purge": client.commands.get("purge").execute(message, args); break;
       case "pythag": client.commands.get("pythag").execute(message, args); break;
       case "icon": client.commands.get("icon").execute(message, args); break;
