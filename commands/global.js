@@ -7,9 +7,7 @@ module.exports = {
         edditedMessage = edditedMessage.replace(">global ", "");
         var embed = new Discord.MessageEmbed();
         embed.setColor(message.member.displayHexColor);
-        embed.setAuthor(message.author.username, message.author.avatarURL());
-        embed.setFooter(message.guild.name, message.guild.bannerURL());
-        embed.setDescription(edditedMessage);
+        embed.addField(`**${message.author.username}: **`, edditedMessage, true);
         for(var i = 0; i<globalChannels.length; i++){
             if(client.channels.cache.has(globalChannels[i]))client.channels.cache.get(globalChannels[i]).send(embed);
         }
