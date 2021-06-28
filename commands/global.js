@@ -10,6 +10,7 @@ module.exports = {
         embed.setColor(message.member.displayHexColor);
         embed.addField(`**${message.author.username}: **`, edditedMessage, true);
         message.attachments.each(element => {
+            //test if url is image
             if(element.url.includes(".png") || element.url.includes(".jpg")){
                 embed.setImage(element.url);
             }
