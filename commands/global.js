@@ -5,11 +5,17 @@ module.exports = {
         if(message.author.bot) return;
         var edditedMessage = message.content.replace(">g ", "");
         edditedMessage = edditedMessage.replace(">global ", "");
+        if(edditedMessage == null || edditedMessage == "") edditedMessage = "*Message had no text*";
         var embed = new Discord.MessageEmbed();
         embed.setColor(message.member.displayHexColor);
         embed.addField(`**${message.author.username}: **`, edditedMessage, true);
         message.attachments.each(element => {
-            embed.addField(element.url);
+            if(element.url.includes(".png") || element.url.includes(".jpg")){
+                embed.setImage(element.url);
+            }
+            else{
+                embed.addField(element.url);
+            }
         })
         for(var i = 0; i<globalChannels.length; i++){
             if(client.channels.cache.has(globalChannels[i]))client.channels.cache.get(globalChannels[i]).send(embed);
