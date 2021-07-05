@@ -6,7 +6,7 @@ module.exports = {
         embed
             .setTitle(message.guild.name)
             .addField("Member Count: ", message.guild.memberCount)
-            .addField("Owner: ", message.guild.owner.displayName)
+            .addField("Owner: ", message.guild.owner == null ? "error" : message.guild.owner.displayName)
             .addField("Region: ", message.guild.region)
             .addField("Birthday: ", message.guild.createdAt)
             .addField("Boosts: ", message.guild.premiumSubscriptionCount);
