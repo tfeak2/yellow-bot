@@ -72,6 +72,7 @@ client.on("message", message => {
       case "icon": client.commands.get("icon").execute(message, args); break;
       case "ban": client.commands.get("ban").execute(message, args); break;
       case "kick": client.commands.get("kick").execute(message, args); break;
+      case "play": client.commands.get("play").execute(message, args, Discord); break;
       //case "help": client.commands.get("help").execute(message, args, client, Discord); break;
       case "quadratic": client.commands.get("quadratic").execute(message, args); break;
       //case "wpm": client.commands.get("wpm").execute(message, args); break;
