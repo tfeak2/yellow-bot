@@ -1,12 +1,12 @@
 module.exports = {
     name: "play",
     description: "placeholder",
-    execute(message, args, Discord){
+    async execute(message, args, Discord){
         //libs
         const ytdl = require("ytdl-core");
         const yts = require( 'yt-search' );
 
-        const r = yts(message.content.slice(6));
+        const r = await yts(message.content.slice(6));
         var v = r.videos[0];
         var voiceChannel = message.member.voice.channel;
         voiceChannel.join().then(connection =>{
