@@ -12,8 +12,10 @@ module.exports = {
         voiceChannel.join().then(connection =>{
             const dispatcher = connection.play(ytdl(v.url, { quality: 'highestaudio'}));
             var embed = new Discord.MessageEmbed();
-            embed.setTitle("Playing: " + v.title);
+            embed.setTitle("Playing: ");
+            embed.setDescription(`${ views } | ${ v.title } (${ v.timestamp }) | ${ v.author.name }`);
             embed.setThumbnail(v.thumbnail);
+            embed.setURL(v.url);
             message.channel.send(embed);
             dispatcher.on("end", end => {
                 voiceChannel.leave();
