@@ -6,7 +6,7 @@ module.exports = {
         const ytdl = require("ytdl-core");
         const yts = require( 'yt-search' );
 
-        const r = await yts(message.content.slice(6));
+        const r = yts(message.content.slice(6));
         var v = r.videos[0];
         var voiceChannel = message.member.voice.channel;
         voiceChannel.join().then(connection =>{
