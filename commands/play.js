@@ -13,7 +13,7 @@ module.exports = {
             const dispatcher = connection.play(ytdl(v.url, { quality: 'highestaudio'}));
             var embed = new Discord.MessageEmbed();
             embed.setTitle("Playing: ");
-            embed.setDescription(`${ views } | ${ v.title } (${ v.timestamp }) | ${ v.author.name }`);
+            embed.setDescription(`${ v.views } | ${ v.title } (${ v.timestamp }) | ${ v.author.name }`);
             embed.setThumbnail(v.thumbnail);
             embed.setURL(v.url);
             message.channel.send(embed);
