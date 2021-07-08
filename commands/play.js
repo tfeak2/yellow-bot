@@ -8,6 +8,9 @@ module.exports = {
             dispatcher.on("end", end => {
                 voiceChannel.leave();
             });
-        }).catch(err => console.log(err));
+        }).catch(err => {
+            console.log(err);
+            message.channel.send("Something went wrong, are you connected to a voice channel?");
+        });
     }
 }
