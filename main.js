@@ -1,6 +1,10 @@
 //import discord lib set constants
 const Discord = require("discord.js");
 const client = new Discord.Client({disableEveryone: false});
+//activities
+const { DiscordTogether } = require('discord-together');
+client.discordTogether = new DiscordTogether(client);
+
 const disbut = require('discord-buttons')(client);
 const { MessageButton, MessageActionRow } = require("discord-buttons")
 const prefix = ">";
@@ -189,6 +193,13 @@ client.on("message", message => {
 
 client.on('clickButton', async (button) => {
    button.defer();
+   if(button.id.startsWith("?")){
+      button.channel.send(JSON.stringify(button.clicker));
+      /*if(!button.clicker.voice) return 
+      client.discordTogether.createTogetherCode(button.clicker.voice.channelID, button.id.replace(/?/g, "")).then(async invite => {
+         return message.channel.send(`${invite.code}`);
+     });*/
+   }
    var editedMessage = (button.message.content).replace(/```/g, "");
    editedMessage = editedMessage.replace(/ /g, "");
    if(button.id == "="){
