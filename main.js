@@ -196,7 +196,7 @@ client.on('clickButton', async (button) => {
    button.defer();
    if(button.id.startsWith("?")){
       if(!button.clicker.member.voice) return button.reply.send("Please connect to a voice channel");
-      client.discordTogether.createTogetherCode(button.clicker.member.voice.channelID, button.id.replace(/?/g, "")).then(async invite => {
+      client.discordTogether.createTogetherCode(button.clicker.member.voice.channelID, button.id.replace("?", "")).then(async invite => {
          return button.reply.send(`${invite.code}`);
      });
      return;
