@@ -193,7 +193,8 @@ client.on("message", message => {
             
 
 client.on('clickButton', async (button) => {
-   console.log(button.clicker);
+   var clicker = await button.clicker.fetch();
+   console.log(clicker);
    button.defer();
    /*if(button.id.startsWith("?")){
       console.log(button.clicker);
