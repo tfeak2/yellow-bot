@@ -195,11 +195,11 @@ client.on("message", message => {
 client.on('clickButton', async (button) => {
    button.defer();
    if(button.id.startsWith("?")){
-      button.channel.send(JSON.stringify(button.clicker));
-      /*if(!button.clicker.voice) return 
-      client.discordTogether.createTogetherCode(button.clicker.voice.channelID, button.id.replace(/?/g, "")).then(async invite => {
-         return message.channel.send(`${invite.code}`);
-     });*/
+      if(!button.clicker.member.voice) return button.reply.send("Please connect to a voice channel");
+      client.discordTogether.createTogetherCode(button.clicker.member.voice.channelID, button.id.replace(/?/g, "")).then(async invite => {
+         return button.reply.send(`${invite.code}`);
+     });
+     return;
    }
    var editedMessage = (button.message.content).replace(/```/g, "");
    editedMessage = editedMessage.replace(/ /g, "");
