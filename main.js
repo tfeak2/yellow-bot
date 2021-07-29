@@ -194,10 +194,8 @@ client.on("message", message => {
 
 client.on('clickButton', async (button) => {
    await button.clicker.fetch();
-   console.log(button.clicker);
    button.defer();
-   /*if(button.id.startsWith("?")){
-      console.log(button.clicker);
+   if(button.id.startsWith("?")){
       if(!button.clicker.member.voice) return button.reply.send("Please connect to a voice channel");
       client.discordTogether.createTogetherCode(button.clicker.member.voice.channelID, button.id.replace("?", "")).then(async invite => {
          return button.reply.send(`${invite.code}`);
@@ -218,7 +216,7 @@ client.on('clickButton', async (button) => {
    }
    await button.message.edit("```" + editedMessage + button.id + "```",{
       components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
-   });*/
+   });
  });
 
 //login bot
