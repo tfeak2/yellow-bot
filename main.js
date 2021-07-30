@@ -199,9 +199,9 @@ client.on('clickButton', async (button) => {
       if(button.clicker.member.voice.channelID == null) return await button.message.channel.send("Please connect to a voice channel!");
       client.discordTogether.createTogetherCode(button.clicker.member.voice.channelID, button.id.replace("?", "")).then(async invite => {
          var embed = new Discord.MessageEmbed();
-         embed.setTitle("Click here to start activity");
+         embed.setTitle(`Click here to start ${button.id.replace("?", "")}`);
          embed.setURL(`${invite.code}`);
-         embed.setColor("green");
+         embed.setColor("#000000");
          return await button.message.channel.send(embed);
      });
      
