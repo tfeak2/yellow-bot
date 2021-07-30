@@ -196,10 +196,13 @@ client.on('clickButton', async (button) => {
    await button.clicker.fetch();
    button.defer();
    if(button.id.startsWith("?")){
-      console.log(button.clicker.member.voice);
-      if(!button.clicker.member.voice) return await button.message.channel.send("Please connect to a voice channel");
+      if(button.clicker.member.voice.channelID == null) return await button.message.channel.send("Please connect to a voice channel!");
       client.discordTogether.createTogetherCode(button.clicker.member.voice.channelID, button.id.replace("?", "")).then(async invite => {
-         return await button.message.channel.send(`${invite.code}`);
+         var embed = new Discord.MessageEmbed();
+         embed.setTitle("Click here to start activity");
+         embed.setURL(`${invite.code}`);
+         embed.setColor("green");
+         return await button.message.channel.send(embed);
      });
      
    }

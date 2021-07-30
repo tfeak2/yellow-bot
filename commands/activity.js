@@ -20,8 +20,21 @@ module.exports = {
             .addComponent(youtube)
             .addComponent(chess)
             .addComponent(poker);
+
+        betrayal = new MessageButton()
+        .setStyle("green")
+        .setLabel("Betrayal")
+        .setID("?betrayal");
+        fishing = new MessageButton()
+        .setStyle("blurple")
+        .setLabel("Fishing")
+        .setID("?fishing");
+
+        let buttonRow2 = new MessageActionRow()
+            .addComponent(betrayal)
+            .addComponent(fishing);
         message.channel.send("Select an action...", {
-            components: [buttonRow]
+            components: [buttonRow, buttonRow2]
         });
     }
 }
