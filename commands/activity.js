@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args){
         const { MessageButton, MessageActionRow } = require("discord-buttons");
         youtube = new MessageButton()
-        .setStyle("gray")
+        .setStyle("red")
         .setLabel("Youtube")
         .setID("?youtube");
         chess = new MessageButton()
@@ -12,7 +12,7 @@ module.exports = {
         .setLabel("Chess")
         .setID("?chess");
         poker = new MessageButton()
-        .setStyle("gray")
+        .setStyle("blurple")
         .setLabel("Poker")
         .setID("?poker");
 
