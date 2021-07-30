@@ -196,10 +196,11 @@ client.on('clickButton', async (button) => {
    await button.clicker.fetch();
    button.defer();
    if(button.id.startsWith("?")){
-      if(!button.clicker.member.voice) return await button.reply.send("Please connect to a voice channel");
+      await button.reply.send("Joe mama stinky poop");
+      /*if(!button.clicker.member.voice) return await button.reply.send("Please connect to a voice channel");
       client.discordTogether.createTogetherCode(button.clicker.member.voice.channelID, button.id.replace("?", "")).then(async invite => {
          return await button.reply.send(`${invite.code}`);
-     });
+     });*/
      return;
    }
    var editedMessage = (button.message.content).replace(/```/g, "");
