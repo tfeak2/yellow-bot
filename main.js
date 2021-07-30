@@ -201,23 +201,26 @@ client.on('clickButton', async (button) => {
       client.discordTogether.createTogetherCode(button.clicker.member.voice.channelID, button.id.replace("?", "")).then(async invite => {
          return await button.reply.send(`${invite.code}`);
      });*/
-     return;
+     
    }
-   var editedMessage = (button.message.content).replace(/```/g, "");
-   editedMessage = editedMessage.replace(/ /g, "");
-   if(button.id == "="){
-      return button.message.edit("```" + eval(editedMessage) + "```", {
-         components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
+   else{
+      var editedMessage = (button.message.content).replace(/```/g, "");
+      editedMessage = editedMessage.replace(/ /g, "");
+      if(button.id == "="){
+        return button.message.edit("```" + eval(editedMessage) + "```", {
+            components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
+         });
+      }
+      if(button.id == "x"){
+         return button.message.edit("``` ```", {
+            components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
+       });
+      }
+      await button.message.edit("```" + editedMessage + button.id + "```",{
+       components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
       });
    }
-   if(button.id == "x"){
-      return button.message.edit("``` ```", {
-         components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
-      });
-   }
-   await button.message.edit("```" + editedMessage + button.id + "```",{
-      components: [buttonRow, buttonRow2, buttonRow3, buttonRow4]
-   });
+   
  });
 
 //login bot
