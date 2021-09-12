@@ -61,6 +61,17 @@ client.on("message", message => {
    for(var i = 0; i<globalChannels.length; i++){
       if(message.channel.id == globalChannels[i])client.commands.get("global").execute(message, client, Discord, globalChannels);
    }
+   if(message.author.bot && message.content.startsWith("GG") && message.guild.id == "748135653450973245"){
+      var level = message.content.slice((message.content.indexOf("level")+6));
+      var member = message.mentions.members.first();
+      switch(level){
+         case "5": member.roles.add(message.guild.roles.cache.get("886221321753735208")); break;
+         case "10": member.roles.add(message.guild.roles.cache.get("886222121498460160")); break;
+         case "15": member.roles.add(message.guild.roles.cache.get("886217282357985290")); break;
+         default: return;
+      }
+      return message.channel.send("You received a role for leveling up!");
+   }
    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
    const args = message.content.slice(prefix.length).split(" ");
