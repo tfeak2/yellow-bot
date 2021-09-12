@@ -68,8 +68,10 @@ client.on("message", message => {
          case "5": member.roles.add(message.guild.roles.cache.get("886221321753735208")); break;
          case "10": member.roles.add(message.guild.roles.cache.get("886222121498460160")); break;
          case "15": member.roles.add(message.guild.roles.cache.get("886217282357985290")); break;
-         default: return;
+         default: console.log("Noting to do!");
       }
+      console.log(message.author.name + " has leveled up to " + level);
+      console.log(member);
       return message.channel.send("You received a role for leveling up!");
    }
    if(!message.content.startsWith(prefix) || message.author.bot) return;
