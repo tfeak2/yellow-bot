@@ -7,7 +7,7 @@ module.exports = {
         regexStr= str.match(/[a-zA-Z]+|[0-9]+(?:\.[0-9]+|)/g);
         if(isNaN(regexStr[0])) return message.channel.send("Invalid arguments");
         let minutes = regexStr[0];
-        var type = "Medium";
+        var type = "medium";
         switch(regexStr[1][0]){
             case "f": minutes /= 160; type = "fast"; break;
             case "m": minutes /= 130; type = "medium"; break;

@@ -1,6 +1,6 @@
 module.exports = {
     name: "play",
-    description: "placeholder",
+    description: "plays a song using ytdl (voice channel)",
     async execute(message, args, Discord){
         //libs
         const ytdl = require("ytdl-core");

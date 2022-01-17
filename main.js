@@ -93,7 +93,7 @@ client.on("message", message => {
       case "play": client.commands.get("play").execute(message, args, Discord); break;
       case "help": client.commands.get("help").execute(message, args, client, Discord); break;
       case "quadratic": client.commands.get("quadratic").execute(message, args); break;
-      //case "wpm": client.commands.get("wpm").execute(message, args); break;
+      case "wpm": client.commands.get("wpm").execute(message, args); break;
       //case "links": client.commands.get("links").execute(message, args, Discord); break;
       //case "dates": client.commands.get("dates").execute(message, args, Discord); break;
       case "weather": client.commands.get("weather").execute(message, args, Discord); break;
