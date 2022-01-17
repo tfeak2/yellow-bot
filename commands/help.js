@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args, client, Discord) {
         var embed = new Discord.MessageEmbed();
         client.commands.forEach((item) => {
-            embed.addFields(item.name, item.description, true);
+            embed.addField(item.name, item.description, true);
         });
         embed.setTitle("Help Page");
         embed.setColor("#31b073");
