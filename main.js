@@ -23,7 +23,6 @@ const rclient = new snoowrap({
   username: process.env.r_username,
   password: process.env.r_password
 });
-
 //const Hypixel = require('hypixel-api-reborn');
 //const hypixel = new Hypixel.Client(process.env.hypixel_api);
 
@@ -82,6 +81,7 @@ client.on("message", message => {
    switch (args[0]){
 
       case "ping": client.commands.get("ping").execute(message, args); break;
+      case "echo": client.commands.get("echo").execute(message, args); break;
       case "activity": client.commands.get("activity").execute(message, args); break;
       case "reddit": case "r": client.commands.get("reddit").execute(message, args, rclient, Discord); break;
       case "global": case "g": client.commands.get("global").execute(message, client, Discord, globalChannels); break;
