@@ -83,7 +83,7 @@ client.on("message", message => {
       case "ping": client.commands.get("ping").execute(message, args); break;
       case "echo": client.commands.get("echo").execute(message, args); break;
       case "activity": client.commands.get("activity").execute(message, args); break;
-      case "reddit": case "r": client.commands.get("reddit").execute(message, args, rclient, Discord); break;
+      //case "reddit": case "r": client.commands.get("reddit").execute(message, args, rclient, Discord); break;
       case "global": case "g": client.commands.get("global").execute(message, client, Discord, globalChannels); break;
       case "purge": client.commands.get("purge").execute(message, args); break;
       case "pythag": client.commands.get("pythag").execute(message, args); break;
